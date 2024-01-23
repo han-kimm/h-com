@@ -1,21 +1,27 @@
-import styles from "@/app/(beforeLogin)/_component/main.module.css";
 import Image from "next/image";
-import zLogo from "../../../../public/zlogo.png";
+import logo from "@/../public/logo.png";
+
 import Link from "next/link";
 
 export default function Main() {
   return (
-    <>
-      <div className={styles.left}>
-        <Image src={zLogo} alt="logo" />
+    <div className="w-dvw h-dvh flex">
+      <div className="flex justify-center items-center flex-1">
+        <Image src={logo} alt="사이트 로고" />
       </div>
-      <div className={styles.right}>
-        <h1>지금 일어나고 있는 일</h1>
-        <h2>지금 가입하세요.</h2>
-        <Link href="/i/flow/signup" className={styles.signup}>계정 만들기</Link>
-        <h3>이미 트위터에 가입하셨나요?</h3>
-        <Link href="/login" className={styles.login}>로그인</Link>
+      <div className="flex flex-col justify-center flex-1">
+        <h1 className="font-bold text-6xl my-12">지금 일어나고 있는 일</h1>
+        <h2 className="font-bold text-3xl my-8">지금 가입하세요.</h2>
+        <Link href="/i/flow/signup" className={linkStyle + "bg-blue-400 hover:bg-blue-500"}>
+          계정 만들기
+        </Link>
+        <h3 className="font-bold text-3xl my-8">이미 트위터에 가입하셨나요?</h3>
+        <Link href="/i/flow/login" className={linkStyle + "bg-gray-400 hover:bg-gray-500"}>
+          로그인
+        </Link>
       </div>
-    </>
-  )
+    </div>
+  );
 }
+
+const linkStyle = "w-80 h-10 rounded-3xl px-4 text-lg text-white font-semibold border-none flex justify-center items-center ";
