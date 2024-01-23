@@ -1,7 +1,7 @@
-"use client";
-
 import SignupModal from "@/app/(beforeLogin)/_components/SignupModal";
 
-export default function Page() {
+const Page = () => {
   return <SignupModal />;
-}
+};
+
+export default Page;
